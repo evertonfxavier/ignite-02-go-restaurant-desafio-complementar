@@ -4,7 +4,7 @@ import { Container } from "./styles";
 import Logo from "../../assets/logo.svg";
 
 interface HeaderProps {
-  openModal: any;
+  openModal?: any;
 }
 
 const Header: React.FC<HeaderProps> = ({ openModal }) => {
