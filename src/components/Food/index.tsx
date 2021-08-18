@@ -17,26 +17,13 @@ const Food: React.FC<IFood> = ({ food, handleDelete, handleEditFood }) => {
   const [isAvailable, setIsAvailable] = useState(food.available);
 
   useEffect(() => {
-    // api.put(`/foods/${food.id}`,{
-    //   ...food,
-    //   available: isAvailable
-    // })
+
   }, [isAvailable]);
 
   const toggleAvailable = async () => {
-    // await api.put(`/foods/${food.id}`, {
-    //   ...food,
-    //   available: !isAvailable,
-    // });
 
-    // setIsAvailable(!isAvailable);
     setIsAvailable(!isAvailable);
   };
-
-  // setEditingFood = () => {
-  //   const { food, handleEditFood } = this.props;
-  //   handleEditFood(food);
-  // }
 
   const setEditingFood = () => {
     handleEditFood({ ...food, available: isAvailable });

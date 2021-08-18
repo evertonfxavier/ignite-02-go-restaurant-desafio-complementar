@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef } from "react";
 import { FiCheckSquare } from "react-icons/fi";
 import { FormHandles } from "@unform/web/node_modules/@unform/core";
 
@@ -33,24 +33,8 @@ const ModalAddFood: React.FC<ModalAddFoodProps> = ({
     async (data: CreateFood) => {
       handleAddFood(data);
     },
-    // [handleAddFood, setIsOpen]
     [handleAddFood]
   );
-
-  // constructor(props) {
-  //   super(props);
-
-  //   this.formRef = createRef();
-  // }
-
-  // handleSubmit = async data => {
-  //   const { setIsOpen, handleAddFood } = this.props;
-
-  //   handleAddFood(data);
-  //   setIsOpen();
-  // };
-
-  //   const { isOpen, setIsOpen } = this.props;
 
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>

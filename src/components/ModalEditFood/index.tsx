@@ -39,22 +39,6 @@ const ModalEditFood: React.FC<ModalEditFoodProps> = ({
     [handleUpdateFood],
   );
 
-  // constructor(props) {
-  //   super(props);
-
-  //   formRef = createRef()
-  // }
-
-  // handleSubmit = async (data) => {
-  //   const { setIsOpen, handleUpdateFood } = this.props;
-
-  //   handleUpdateFood(data);
-  //   setIsOpen();
-  // };
-
-  // render() {
-  //   const { isOpen, setIsOpen, editingFood } = this.props;
-
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <Form
