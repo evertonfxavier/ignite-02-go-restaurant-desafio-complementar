@@ -1,44 +1,24 @@
-import { ReactNode } from "react";
-import { Component } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import ReactModal from "react-modal";
 
 interface ModalProps {
   isOpen: boolean;
-  onRequestClose: () => void;
+  setIsOpen: () => void;
   children: ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onRequestClose, children }) => {
-  
-  // constructor(props) {
-  //   super(props);
+const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen, children }) => {
+  const [modalStatus, setModalStatus] = useState(isOpen);
 
-  //   const { isOpen } = this.props;
-  //   this.state = {
-  //     modalStatus: isOpen
-  //   }
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   const { isOpen } = this.props;
-
-  //   if (prevProps.isOpen !== isOpen) {
-  //     console.log(this.props)
-  //     this.setState({ modalStatus: isOpen })
-  //   }
-  // }
-
-  // render() {
-  //   const { setIsOpen } = this.props;
-  //   const { modalStatus } = this.state;
+  useEffect(() => {
+    setModalStatus(isOpen);
+  }, [isOpen]);
 
   return (
     <ReactModal
       shouldCloseOnOverlayClick={!false}
-      // onRequestClose={setIsOpen}
-      onRequestClose={onRequestClose}
-      // isOpen={modalStatus}
-      isOpen={isOpen}
+      onRequestClose={setIsOpen}
+      isOpen={modalStatus}
       ariaHideApp={false}
       style={{
         content: {
