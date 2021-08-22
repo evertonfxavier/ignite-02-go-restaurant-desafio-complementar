@@ -3,7 +3,7 @@ import ReactModal from "react-modal";
 
 interface ModalProps {
   isOpen: boolean;
-  setIsOpen: () => void;
+  setIsOpen: (event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>) => void;
   children: ReactNode;
 }
 

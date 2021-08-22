@@ -1,6 +1,9 @@
 import { useCallback, useRef } from "react";
 import { FiCheckSquare } from "react-icons/fi";
-import { FormHandles } from "@unform/web/node_modules/@unform/core";
+import {
+  FormHandles,
+  SubmitHandler,
+} from "@unform/web/node_modules/@unform/core";
 
 import Modal from "../Modal";
 import Input from "../Input";
@@ -29,12 +32,17 @@ const ModalAddFood: React.FC<ModalAddFoodProps> = ({
 }) => {
   const formRef = useRef<FormHandles>(null);
 
-  const handleSubmit = useCallback(
-    async (data: CreateFood) => {
-      handleAddFood(data);
-    },
-    [handleAddFood]
-  );
+  // const handleSubmit = useCallback(
+  //   async (data: CreateFood) => {
+  //     handleAddFood(data);
+  //   },
+  //   [handleAddFood]
+  // );
+
+  const handleSubmit: SubmitHandler = async (data: CreateFood) => {
+    handleAddFood(data);
+    setIsOpen();
+  };
 
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
