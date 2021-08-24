@@ -6,7 +6,7 @@ import {
   InputHTMLAttributes,
 } from "react";
 import { IconBaseProps } from "react-icons/lib";
-import { useField } from "@unform/web/node_modules/@unform/core";
+import { useField } from "@unform/core";
 
 import { Container } from "./styles";
 

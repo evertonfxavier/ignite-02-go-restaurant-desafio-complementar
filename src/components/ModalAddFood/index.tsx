@@ -3,7 +3,7 @@ import { FiCheckSquare } from "react-icons/fi";
 import {
   FormHandles,
   SubmitHandler,
-} from "@unform/web/node_modules/@unform/core";
+} from "@unform/core";
 
 import Modal from "../Modal";
 import Input from "../Input";
